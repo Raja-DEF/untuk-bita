@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#111">
+<title>Untuk Bita ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f0f0f,#1e1e1e);
+    padding:20px 0;
+    overflow:auto;
+}
+
+.container{
+    width:90%;
+    max-width:520px;
+    padding:25px;
+    text-align:center;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    color:white;
+    box-shadow:0 0 30px rgba(255,77,109,.3);
+    z-index:10;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin:0 auto 15px;
+}
+
+p{
+    line-height:1.8;
+    margin-bottom:20px;
+    word-wrap:break-word;
+    white-space:pre-line;
+}
+
+button{
+    padding:14px 22px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+    margin:5px 0;
+    transition:.3s;
+    width:100%;
+    max-width:100%;
+}
+
+@media (max-width:480px) {
+    .container{
+        padding:20px;
+    }
+
+    h1{
+        font-size:1.6rem;
+    }
+
+    p{
+        font-size:0.98rem;
+        line-height:1.7;
+    }
+
+    button{
+        font-size:15px;
+        padding:13px 18px;
+    }
+}
+
+h1{
+    color:#ff4d6d;
+    margin-bottom:15px;
+}
+
+p{
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+    margin:5px;
+    transition:.3s;
+}
+
+.btn-maaf{
+    background:#ff4d6d;
+    color:white;
+}
+
+.btn-music{
+    background:white;
+    color:#111;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#thanksPage{
+    display:none;
+    animation:fadeIn 1s ease;
+}
+
+#thanksPage img{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:20px;
+    border:4px solid #ff4d6d;
+    margin-bottom:15px;
+    box-shadow:0 0 20px rgba(255,77,109,.5);
+}
+
+.typing{
+    overflow:hidden;
+    border-right:2px solid white;
+    white-space:nowrap;
+    animation:
+    typing 5s steps(40,end),
+    blink .7s infinite;
+}
+
+@keyframes typing{
+    from{width:0}
+    to{width:100%}
+}
+
+@keyframes blink{
+    50%{border-color:transparent}
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.heart{
+    position:fixed;
+    color:#ff4d6d;
+    pointer-events:none;
+    animation:float linear forwards;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+</style>
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+    <div id="apologyPage">
+
+        <h1>Maapinn lajaaaa ❤️</h1>
+
+        <p>
+            lajaaa auuu mungkinnn lajaaa cudaaa buatt bitaaa kecewaaa.
+            lajaaaa tidaaa bicaaa ubahh apaa yangg cudaaa teljadiii,
+            tapiii lajaaaa beneyannnn menyecaall.
+
+            maaciiii kayenaa cudaaa auuu membacaa pelmintaan maap lajaaa.
+            lajaaa hayappp bitaaa bicaa maapinnn lajaaaaa.
+            
+
+            kayenaaa bitaaaa bagii lajaaaa cangattt beyaytiii. ❤️
+        </p>
+
+        <button class="btn-maaf" onclick="forgiveMe()">
+            bitaaa cudaaa maapinn ❤️
+        </button>
+
+        <button class="btn-music" onclick="toggleMusic()" id="musicBtn">
+            🎵 Putar Musik
+        </button>
+
+    </div>
+
+    <div id="thanksPage">
+
+        <img src="foto.jpg" alt="Foto Kenangan">
+
+        <h1>NDAAA BOYEEE MAYAHHH YAMAAA YAMAAA CAMAA LAJAAA ❤️</h1>
+
+        <p class="typing">
+            maaciii cudaaa maapinnn lajaaaaa
+        </p>
+
+        <br><br>
+
+        <p>
+            lajaaa benell benell belsyukull kayenaa bitaaa maciii
+            maapinnn lajaaaa untukkk mempelbaikiii cemuanaaaa.
+
+            lajaaa atann belajall dayiiii kecayahnnan dann beyucahaaa
+            menjadiii yebihhh baikkk yagiiii.
+
+            maaciii kayenaaa ceyayuuu adaaaa.
+            ❤️
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+const music = document.getElementById("bgMusic");
+
+document.addEventListener("click", function(){
+    music.play().catch(()=>{});
+},{once:true});
+
+function toggleMusic(){
+
+    const btn = document.getElementById("musicBtn");
+
+    if(music.paused){
+        music.play();
+        btn.innerHTML="🎵 Matikan Musik";
+    }else{
+        music.pause();
+        btn.innerHTML="🎵 Putar Musik";
+    }
+}
+
+function forgiveMe(){
+
+    document.getElementById("apologyPage").style.display="none";
+    document.getElementById("thanksPage").style.display="block";
+
+    for(let i=0;i<25;i++){
+        setTimeout(createHeart,i*150);
+    }
+}
+
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+    heart.innerHTML="❤️";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(Math.random()*25+15)+"px";
+    heart.style.animationDuration=(Math.random()*3+3)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
+}
+
+setInterval(createHeart,400);
+
+</script>
+
+</body>
+</html>
